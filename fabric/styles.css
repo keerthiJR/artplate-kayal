@@ -1,0 +1,66 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  /* background-color: red; */
+}
+.body__drop{
+  background-color: blue;
+}
+.lower-canvas{
+  left: 43% !important;
+  width: 800px  !important;
+  height: 450px !important;
+z-index: -1 !important;
+}
+.canvas-container{
+  height: 450px !important;
+  width: 800px !important;
+  z-index: -1 !important;
+}
+.drop__down{
+  display: flex !important;
+  flex-direction: row !important;
+  padding: 1%;
+  justify-content: space-between;
+  
+}
+.labels__styles{
+  display: block !important;
+  text-align: center !important;
+  margin-bottom:3% !important;
+}
+.bg__img{
+   
+    background: url("../img/about-bg.jpg") center center;
+    background-size: cover;
+    position: relative;
+    /* padding: px 0; */
+    background: rgba(0, 0, 0, 0.9);
+    
+  
+  
+  
+}
+.form-select{
+  background-color:#6c757d !important;
+  color: #fff !important;
+  border-color: #6c757d !important;
+  margin-top:3% !important;
+}
+/* label{
+  display: block !important;
+  text-align: center !important;
+  margin-top:2.5% !important;
+} */
+/* .bg__img:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+} */
