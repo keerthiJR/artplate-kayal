@@ -62,7 +62,7 @@
         </div>
         <div id="heading-inner" style="font-size: 35px; margin-right: 15%;"></div>
             <div>
-            <button href="javascript:;" id="picbtn" onclick="TakeAboutMe(this.id);" class="btn btn-primary" >Take a picture</button>
+            <button href="javascript:;" id="picbtn" onclick="TakeAboutMe(this.id);" class="btn btn-primary" disabled=true>Take a picture</button>
              </div>  
             </div>
             
@@ -74,8 +74,8 @@
         <div class="drop__down">
         <div id="div1">
             <label for="tshirt-design2" class="labels__styles">Copper Plate</label>
-        <select id="tshirt-design2" class="form-select">
-            <option value="">Select one of our designs ...</option>
+        <select id="tshirt-design2" class="form-select" onchange="btnchange()">
+            <option value="dummy">Select one of our designs ...</option>
             <option value="copper1">copper1</option>
             <option value="copper2">copper2</option>
             <option value="copper3">copper3</option>
@@ -87,8 +87,8 @@
         <br>
         <div id="div2" class="dropdown">
             <label for="tshirt-design3" class="labels__styles">Silver Plate</label>
-        <select id="tshirt-design3" class="form-select" aria-label="Default select example">
-            <option value="">Select one of our designs ...</option>
+        <select id="tshirt-design3" class="form-select" aria-label="Default select example" onchange="btnchange()">
+            <option value="dummy">Select one of our designs ...</option>
             <option value="silver1">silver1</option>
             <option value="silver2">silver2</option>
             <option value="silver3">silver3</option>
@@ -100,8 +100,8 @@
 
     <div id="div3">
         <label for="tshirt-design4" class="labels__styles">Center design</label>
-        <select id="tshirt-design4" class="form-select">
-            <option value="">Select one of our designs ...</option>
+        <select id="tshirt-design4" class="form-select" onchange="btnchange()">
+            <option value="dummy">Select one of our designs ...</option>
             <option value="center1">center1</option>
             <option value="center2">center2</option>
 
@@ -124,7 +124,7 @@
         <script>
             window.name_abc = "SevenInch";
             document.getElementById('TenInch').onclick = function() {
-            
+           //document.getElementById("picbtn").disabled = false;
             document.getElementById("heading-inner").innerHTML = "10 INCH ARTPLATE";
             var values1 = ["Select one of our designs ...","copper1","copper2","copper3"];
             var values2 = ["Select one of our designs ...","silver1","silver2","silver3"];
@@ -134,12 +134,12 @@
             select1.name = "TenL1";
             select1.id = "TenL1";
             select1.className="form-select";
-
+            
             var select2 = document.createElement("select");
             select2.name = "TenL2";
             select2.id = "TenL2";
             select2.className="form-select";
-
+            
             var select3 = document.createElement("select");
             select3.name = "TenL3";
             select3.id = "TenL3";
@@ -196,6 +196,16 @@ document.getElementById("TenL1").addEventListener("change", function(){
 // if(this.value=="Select one of our designs ..."){
 //     canvas.clear();
 // }
+if(this.value=="Select one of our designs ..."){
+
+let obj1 = canvas.getObjects().find(obj1 => obj1.id === "TCO1");
+canvas.remove(obj1);
+let obj2 = canvas.getObjects().find(obj2 => obj2.id === "TCO2");
+canvas.remove(obj2);
+let obj3 = canvas.getObjects().find(obj3 => obj3.id === "TCO3");
+canvas.remove(obj3);
+btnchange2();
+}
 if(this.value=="copper1")
 {
 // canvas.clear();
@@ -210,6 +220,7 @@ let obj1 = canvas.getObjects().find(obj1 => obj1.id === "TCO2");
     canvas.remove(obj1);
     let obj2 = canvas.getObjects().find(obj2 => obj2.id === "TCO3");
     canvas.remove(obj2);
+    btnchange2();
 // var imgInstance = new fabric.Image(background, {id:"SCO1"});
 // imgInstance.scaleToWidth(canvas.getWidth());
 // imgInstance.scaleToHeight(canvas.getHeight());
@@ -231,6 +242,7 @@ let obj1 = canvas.getObjects().find(obj1 => obj1.id === "TCO1");
     canvas.remove(obj1);
     let obj2 = canvas.getObjects().find(obj2 => obj2.id === "TCO3");
     canvas.remove(obj2);
+    btnchange2();
 // var imgInstance = new fabric.Image(background, {id:"SCO1"});
 // imgInstance.scaleToWidth(canvas.getWidth());
 // imgInstance.scaleToHeight(canvas.getHeight());
@@ -249,6 +261,7 @@ let obj1 = canvas.getObjects().find(obj1 => obj1.id === "TCO1");
     canvas.remove(obj1);
     let obj2 = canvas.getObjects().find(obj2 => obj2.id === "TCO2");
     canvas.remove(obj2);
+    btnchange2();
 // var imgInstance = new fabric.Image(background, {id:"SCO1"});
 // imgInstance.scaleToWidth(canvas.getWidth());
 // imgInstance.scaleToHeight(canvas.getHeight());
@@ -262,6 +275,16 @@ document.getElementById("TenL2").addEventListener("change", function(){
 // if(this.value=="Select one of our designs ..."){
 //     canvas.clear();
 // }
+if(this.value=="Select one of our designs ..."){
+
+let obj1 = canvas.getObjects().find(obj1 => obj1.id === "TS1");
+canvas.remove(obj1);
+let obj2 = canvas.getObjects().find(obj2 => obj2.id === "TS2");
+canvas.remove(obj2);
+let obj3 = canvas.getObjects().find(obj3 => obj3.id === "TS3");
+canvas.remove(obj3);
+btnchange2();
+}
 if(this.value=="silver1")
 {
 // canvas.clear();
@@ -277,6 +300,7 @@ let obj1 = canvas.getObjects().find(obj1 => obj1.id === "TS3");
     canvas.remove(obj1);
     let obj2 = canvas.getObjects().find(obj2 => obj2.id === "TS2");
     canvas.remove(obj2);
+    btnchange2();
 // var imgInstance = new fabric.Image(background, {id:"SCO1"});
 // imgInstance.scaleToWidth(canvas.getWidth());
 // imgInstance.scaleToHeight(canvas.getHeight());
@@ -295,7 +319,7 @@ let obj1 = canvas.getObjects().find(obj1 => obj1.id === "TS3");
     canvas.remove(obj1);
     let obj2 = canvas.getObjects().find(obj2 => obj2.id === "TS1");
     canvas.remove(obj2);
-   
+    btnchange2();
 // var imgInstance = new fabric.Image(background, {id:"SCO1"});
 // imgInstance.scaleToWidth(canvas.getWidth());
 // imgInstance.scaleToHeight(canvas.getHeight());
@@ -315,6 +339,7 @@ let obj1 = canvas.getObjects().find(obj1 => obj1.id === "TS1");
     canvas.remove(obj1);
     let obj2 = canvas.getObjects().find(obj2 => obj2.id === "TS2");
     canvas.remove(obj2);
+    btnchange2();
 // var imgInstance = new fabric.Image(background, {id:"SCO1"});
 // imgInstance.scaleToWidth(canvas.getWidth());
 // imgInstance.scaleToHeight(canvas.getHeight());
@@ -327,10 +352,30 @@ document.getElementById("TenL3").addEventListener("change", function(){
 // if(this.value=="Select one of our designs ..."){
 //     canvas.clear();
 // }
+if(this.value=="Select one of our designs ..."){
+
+let obj1 = canvas.getObjects().find(obj1 => obj1.id === "TC1");
+canvas.remove(obj1);
+let obj2 = canvas.getObjects().find(obj2 => obj2.id === "TC2");
+canvas.remove(obj2);
+let obj3 = canvas.getObjects().find(obj3 => obj3.id === "TC3");
+canvas.remove(obj3);
+let obj4 = canvas.getObjects().find(obj3 => obj3.id === "TC4");
+canvas.remove(obj4);
+let obj5 = canvas.getObjects().find(obj3 => obj3.id === "TC5");
+canvas.remove(obj5);
+let obj6 = canvas.getObjects().find(obj3 => obj3.id === "TC6");
+canvas.remove(obj6);
+let obj7 = canvas.getObjects().find(obj3 => obj3.id === "TC7");
+canvas.remove(obj7);
+let obj8 = canvas.getObjects().find(obj3 => obj3.id === "TC8");
+canvas.remove(obj8);
+btnchange2();
+}
 if(this.value=="center1")
     {
         // canvas.clear();
-        var imgInstance = new fabric.Image(Ten_center1, {});
+        var imgInstance = new fabric.Image(Ten_center1, {id:"TC1"});
         console.log(Seven_copper1);
         imgInstance['selectable'] = false;
         imgInstance['evented'] = false;
@@ -342,7 +387,7 @@ if(this.value=="center1")
     canvas.remove(obj2);
     let obj3 = canvas.getObjects().find(obj1 => obj1.id === "TC4");
     canvas.remove(obj3);
-
+    btnchange2();
         // var imgInstance = new fabric.Image(background, {});
         // imgInstance.scaleToWidth(canvas.getWidth());
         // imgInstance.scaleToHeight(canvas.getHeight());
@@ -351,7 +396,7 @@ if(this.value=="center1")
     if(this.value=="center2")
     {
         //canvas.clear();
-        var imgInstance = new fabric.Image(Ten_center2, {});
+        var imgInstance = new fabric.Image(Ten_center2, {id:"TC2"});
         imgInstance['selectable'] = false;
         imgInstance['evented'] = false;
         imgInstance.scaleToWidth(canvas.getWidth());
@@ -362,7 +407,7 @@ if(this.value=="center1")
     canvas.remove(obj1);
     let obj3 = canvas.getObjects().find(obj1 => obj1.id === "TC4");
     canvas.remove(obj3);
-
+    btnchange2();
         // var imgInstance = new fabric.Image(background, {});
         // imgInstance.scaleToWidth(canvas.getWidth());
         // imgInstance.scaleToHeight(canvas.getHeight());
@@ -372,7 +417,7 @@ if(this.value=="center1")
     if(this.value=="center3")
     {
         // canvas.clear();
-        var imgInstance = new fabric.Image(Ten_center3, {});
+        var imgInstance = new fabric.Image(Ten_center3, {id:"TC3"});
         console.log(Seven_copper1);
         imgInstance['selectable'] = false;
         imgInstance['evented'] = false;
@@ -384,7 +429,7 @@ if(this.value=="center1")
     canvas.remove(obj2);
     let obj3 = canvas.getObjects().find(obj1 => obj1.id === "TC4");
     canvas.remove(obj3);
-
+    btnchange2();
         // var imgInstance = new fabric.Image(background, {});
         // imgInstance.scaleToWidth(canvas.getWidth());
         // imgInstance.scaleToHeight(canvas.getHeight());
@@ -394,7 +439,7 @@ if(this.value=="center1")
     if(this.value=="center4")
     {
         // canvas.clear();
-        var imgInstance = new fabric.Image(Ten_center4, {});
+        var imgInstance = new fabric.Image(Ten_center4, {id:"TC4"});
         console.log(Seven_copper1);
         imgInstance['selectable'] = false;
         imgInstance['evented'] = false;
@@ -406,7 +451,7 @@ if(this.value=="center1")
     canvas.remove(obj2);
     let obj3 = canvas.getObjects().find(obj1 => obj1.id === "TC4");
     canvas.remove(obj3);
-
+    btnchange2();
         // var imgInstance = new fabric.Image(background, {});
         // imgInstance.scaleToWidth(canvas.getWidth());
         // imgInstance.scaleToHeight(canvas.getHeight());
@@ -416,7 +461,7 @@ if(this.value=="center1")
     if(this.value=="center5")
     {
         // canvas.clear();
-        var imgInstance = new fabric.Image(Ten_center5, {});
+        var imgInstance = new fabric.Image(Ten_center5, {id:"TC5"});
         console.log(Seven_copper1);
         imgInstance['selectable'] = false;
         imgInstance['evented'] = false;
@@ -428,7 +473,7 @@ if(this.value=="center1")
     canvas.remove(obj2);
     let obj3 = canvas.getObjects().find(obj1 => obj1.id === "TC4");
     canvas.remove(obj3);
-
+    btnchange2();
         // var imgInstance = new fabric.Image(background, {});
         // imgInstance.scaleToWidth(canvas.getWidth());
         // imgInstance.scaleToHeight(canvas.getHeight());
@@ -438,7 +483,7 @@ if(this.value=="center1")
     if(this.value=="center6")
     {
         // canvas.clear();
-        var imgInstance = new fabric.Image(Ten_center6, {});
+        var imgInstance = new fabric.Image(Ten_center6, {id:"TC6"});
         console.log(Seven_copper1);
         imgInstance['selectable'] = false;
         imgInstance['evented'] = false;
@@ -450,7 +495,7 @@ if(this.value=="center1")
     canvas.remove(obj2);
     let obj3 = canvas.getObjects().find(obj1 => obj1.id === "TC4");
     canvas.remove(obj3);
-
+    btnchange2();
         // var imgInstance = new fabric.Image(background, {});
         // imgInstance.scaleToWidth(canvas.getWidth());
         // imgInstance.scaleToHeight(canvas.getHeight());
@@ -460,7 +505,7 @@ if(this.value=="center1")
     if(this.value=="center7")
     {
         // canvas.clear();
-        var imgInstance = new fabric.Image(Ten_center7, {});
+        var imgInstance = new fabric.Image(Ten_center7, {id:"TC7"});
         console.log(Seven_copper1);
         imgInstance['selectable'] = false;
         imgInstance['evented'] = false;
@@ -472,7 +517,7 @@ if(this.value=="center1")
     canvas.remove(obj2);
     let obj3 = canvas.getObjects().find(obj1 => obj1.id === "TC4");
     canvas.remove(obj3);
-
+    btnchange2();
         // var imgInstance = new fabric.Image(background, {});
         // imgInstance.scaleToWidth(canvas.getWidth());
         // imgInstance.scaleToHeight(canvas.getHeight());
@@ -482,7 +527,7 @@ if(this.value=="center1")
     if(this.value=="center8")
     {
         // canvas.clear();
-        var imgInstance = new fabric.Image(Ten_center8, {});
+        var imgInstance = new fabric.Image(Ten_center8, {id:"TC8"});
         console.log(Seven_copper1);
         imgInstance['selectable'] = false;
         imgInstance['evented'] = false;
@@ -494,7 +539,7 @@ if(this.value=="center1")
     canvas.remove(obj2);
     let obj3 = canvas.getObjects().find(obj1 => obj1.id === "TC4");
     canvas.remove(obj3);
-
+    btnchange2();
         // var imgInstance = new fabric.Image(background, {});
         // imgInstance.scaleToWidth(canvas.getWidth());
         // imgInstance.scaleToHeight(canvas.getHeight());
@@ -506,7 +551,7 @@ if(this.value=="center1")
 }, false);
 
 
-
+btnchange2();
 }
 
 
@@ -516,8 +561,7 @@ if(this.value=="center1")
 
 document.getElementById('SevenInch').onclick = function() {
 
-    
-    
+    document.getElementById("picbtn").disabled = true;
     window.name_abc = "SevenInch";
 
 
@@ -591,6 +635,16 @@ document.getElementById("tshirt-design2").addEventListener("change", function(){
 // if(this.value=="Select one of our designs ..."){
 //     canvas.clear();
 // }
+if(this.value=="Select one of our designs ..."){
+
+    let obj1 = canvas.getObjects().find(obj1 => obj1.id === "SCO1");
+    canvas.remove(obj1);
+    let obj2 = canvas.getObjects().find(obj2 => obj2.id === "SCO2");
+    canvas.remove(obj2);
+    let obj3 = canvas.getObjects().find(obj3 => obj3.id === "SCO3");
+    canvas.remove(obj3);
+    btnchange1();
+}
 if(this.value=="copper1")
 {
     // canvas.clear();
@@ -605,6 +659,7 @@ if(this.value=="copper1")
     canvas.remove(obj1);
     let obj2 = canvas.getObjects().find(obj2 => obj2.id === "SCO3");
     canvas.remove(obj2); 
+    btnchange1();
     // var imgInstance = new fabric.Image(background, {id:"SCO1"});
     // imgInstance.scaleToWidth(canvas.getWidth());
     // imgInstance.scaleToHeight(canvas.getHeight());
@@ -626,6 +681,7 @@ if(this.value=="copper2")
     canvas.remove(obj1);
     let obj2 = canvas.getObjects().find(obj2 => obj2.id === "SCO3");
     canvas.remove(obj2);
+    btnchange1();
     // var imgInstance = new fabric.Image(background, {id:"SCO1"});
     // imgInstance.scaleToWidth(canvas.getWidth());
     // imgInstance.scaleToHeight(canvas.getHeight());
@@ -644,6 +700,7 @@ if(this.value=="copper3"){
     canvas.remove(obj1);
     let obj2 = canvas.getObjects().find(obj2 => obj2.id === "SCO2");
     canvas.remove(obj2);
+    btnchange1();
     // var imgInstance = new fabric.Image(background, {id:"SCO1"});
     // imgInstance.scaleToWidth(canvas.getWidth());
     // imgInstance.scaleToHeight(canvas.getHeight());
@@ -656,6 +713,16 @@ document.getElementById("tshirt-design3").addEventListener("change", function(){
 // if(this.value=="Select one of our designs ..."){
 //     canvas.clear();
 // }
+if(this.value=="Select one of our designs ..."){
+
+let obj1 = canvas.getObjects().find(obj1 => obj1.id === "SS1");
+canvas.remove(obj1);
+let obj2 = canvas.getObjects().find(obj2 => obj2.id === "SS2");
+canvas.remove(obj2);
+let obj3 = canvas.getObjects().find(obj3 => obj3.id === "SS3");
+canvas.remove(obj3);
+btnchange1();
+}
 if(this.value=="silver1")
 {
     // canvas.clear();
@@ -671,6 +738,7 @@ if(this.value=="silver1")
     canvas.remove(obj1);
     let obj2 = canvas.getObjects().find(obj2 => obj2.id === "SS3");
     canvas.remove(obj2);
+    btnchange1();
     // var imgInstance = new fabric.Image(background, {id:"SCO1"});
     // imgInstance.scaleToWidth(canvas.getWidth());
     // imgInstance.scaleToHeight(canvas.getHeight());
@@ -690,6 +758,7 @@ if(this.value=="silver2")
     canvas.remove(obj1);
     let obj2 = canvas.getObjects().find(obj2 => obj2.id === "SS3");
     canvas.remove(obj2);
+    btnchange1();
     // var imgInstance = new fabric.Image(background, {id:"SCO1"});
     // imgInstance.scaleToWidth(canvas.getWidth());
     // imgInstance.scaleToHeight(canvas.getHeight());
@@ -708,7 +777,7 @@ if(this.value=="silver3"){
     canvas.remove(obj1);
     let obj2 = canvas.getObjects().find(obj2 => obj2.id === "SS2");
     canvas.remove(obj2);
-
+    btnchange1();
     // var imgInstance = new fabric.Image(background, {id:"SCO1"});
     // imgInstance.scaleToWidth(canvas.getWidth());
     // imgInstance.scaleToHeight(canvas.getHeight());
@@ -721,6 +790,16 @@ document.getElementById("tshirt-design4").addEventListener("change", function(){
 // if(this.value=="Select one of our designs ..."){
 //     canvas.clear();
 // }
+if(this.value=="Select one of our designs ..."){
+
+let obj1 = canvas.getObjects().find(obj1 => obj1.id === "SC1");
+canvas.remove(obj1);
+let obj2 = canvas.getObjects().find(obj2 => obj2.id === "SC2");
+canvas.remove(obj2);
+let obj3 = canvas.getObjects().find(obj3 => obj3.id === "SC3");
+canvas.remove(obj3);
+btnchange1();
+}
 if(this.value=="center1")
 {
     // canvas.clear();
@@ -734,6 +813,7 @@ if(this.value=="center1")
     group.add(imgInstance);
     let obj1 = canvas.getObjects().find(obj1 => obj1.id === "SC2");
     canvas.remove(obj1);
+    btnchange1();
     // var imgInstance = new fabric.Image(background, {id:"SCO1"});
     // imgInstance.scaleToWidth(canvas.getWidth());
     // imgInstance.scaleToHeight(canvas.getHeight());
@@ -751,6 +831,7 @@ if(this.value=="center2")
     group.add(imgInstance);
     let obj1 = canvas.getObjects().find(obj1 => obj1.id === "SC1");
     canvas.remove(obj1);
+    btnchange1();
     // var imgInstance = new fabric.Image(background, {id:"SCO1"});
     // imgInstance.scaleToWidth(canvas.getWidth());
     // imgInstance.scaleToHeight(canvas.getHeight());
@@ -758,6 +839,7 @@ if(this.value=="center2")
 }
 
 }, false);
+btnchange1();
 
 }
 
@@ -775,7 +857,9 @@ if(this.value=="center2")
 
 
 document.getElementById('kayal').onclick = function() {
-            
+    
+
+document.getElementById('picbtn').disabled=true;
             document.getElementById("heading-inner").innerHTML = "KAYAL ARTPLATE";
             var values1 = ["Select one of our designs ...","copper1"];
             var values2 = ["Select one of our designs ...","silver1"];
@@ -794,7 +878,8 @@ document.getElementById('kayal').onclick = function() {
             var select3 = document.createElement("select");
             select3.name = "KayaL3";
             select3.id = "KayalL3";
-            select3.className="form-select";
+            select3.className="form-select";           
+
 
             for (const val of values1) {
             var option = document.createElement("option");
@@ -847,6 +932,16 @@ document.getElementById("KayalL1").addEventListener("change", function(){
 // if(this.value=="Select one of our designs ..."){
 //     canvas.clear();
 // }
+if(this.value=="Select one of our designs ..."){
+    document.getElementById("picbtn").disabled=true;
+    var imgInstance = new fabric.Image(Kayal_copper1, {id:"KC1"});
+    imgInstance['selectable'] = false;
+    imgInstance['evented'] = false;
+    imgInstance.scaleToWidth(canvas.getWidth());
+    imgInstance.scaleToHeight(canvas.getHeight());
+    let obj1 = canvas.getObjects().find(obj1 => obj1.id === "KC1");
+    canvas.remove(obj1);
+}
 if(this.value=="copper1")
 {
 // canvas.clear();
@@ -861,6 +956,7 @@ let obj1 = canvas.getObjects().find(obj1 => obj1.id === "KC2");
     canvas.remove(obj1);
     let obj2 = canvas.getObjects().find(obj2 => obj2.id === "KC3");
     canvas.remove(obj2);
+    btnchange3();
 // var imgInstance = new fabric.Image(background, {id:"SCO1"});
 // imgInstance.scaleToWidth(canvas.getWidth());
 // imgInstance.scaleToHeight(canvas.getHeight());
@@ -875,6 +971,16 @@ document.getElementById("KayalL2").addEventListener("change", function(){
 // if(this.value=="Select one of our designs ..."){
 //     canvas.clear();
 // }
+if(this.value=="Select one of our designs ..."){
+    document.getElementById("picbtn").disabled=true;
+    var imgInstance = new fabric.Image(Kayal_silver1, {id:"KS1"});
+    imgInstance['selectable'] = false;
+    imgInstance['evented'] = false;
+    imgInstance.scaleToWidth(canvas.getWidth());
+    imgInstance.scaleToHeight(canvas.getHeight());
+    let obj2 = canvas.getObjects().find(obj1 => obj1.id === "KS1");
+    canvas.remove(obj2);
+}
 if(this.value=="silver1")
 {
 // canvas.clear();
@@ -890,6 +996,7 @@ let obj1 = canvas.getObjects().find(obj1 => obj1.id === "KS3");
     canvas.remove(obj1);
     let obj2 = canvas.getObjects().find(obj2 => obj2.id === "KS2");
     canvas.remove(obj2);
+    btnchange3();
 // var imgInstance = new fabric.Image(background, {id:"SCO1"});
 // imgInstance.scaleToWidth(canvas.getWidth());
 // imgInstance.scaleToHeight(canvas.getHeight());
@@ -902,6 +1009,16 @@ document.getElementById("KayalL3").addEventListener("change", function(){
 // if(this.value=="Select one of our designs ..."){
 //     canvas.clear();
 // }
+if(this.value=="Select one of our designs ..."){
+    document.getElementById("picbtn").disabled=true;
+    var imgInstance = new fabric.Image(Kayal_silver1, {id:"KD1"});
+    imgInstance['selectable'] = false;
+    imgInstance['evented'] = false;
+    imgInstance.scaleToWidth(canvas.getWidth());
+    imgInstance.scaleToHeight(canvas.getHeight());
+    let obj2 = canvas.getObjects().find(obj1 => obj1.id === "KD1");
+    canvas.remove(obj2);
+}
 if(this.value=="center1")
     {
         // canvas.clear();
@@ -917,16 +1034,21 @@ if(this.value=="center1")
     canvas.remove(obj2);
     let obj3 = canvas.getObjects().find(obj1 => obj1.id === "KD4");
     canvas.remove(obj3);
-
+    btnchange3();
         // var imgInstance = new fabric.Image(background, {});
         // imgInstance.scaleToWidth(canvas.getWidth());
         // imgInstance.scaleToHeight(canvas.getHeight());
         // canvas.add(imgInstance);
     }    
-
+    
 }, false);
 
+document.getElementById("KayalL1").addEventListener("change", function(){
 
+    
+},false);
+
+btnchange3();
 
 }
 
@@ -1486,7 +1608,76 @@ $(function() {
     $("#picbtn").attr("disabled", $sels.length > 0);
   }).change();
 });*/
+var btnchange = function(){
+    console.log("HI THERE");
+    var e1 = document.getElementById("tshirt-design2");
+    var e2 = document.getElementById("tshirt-design3");
+    var e3 = document.getElementById("tshirt-design4");
+    var selValue1 = e1.options[e1.selectedIndex].value ;
+    var selValue2 = e2.options[e2.selectedIndex].value ;
+    var selValue3 = e3.options[e3.selectedIndex].value ;
+    if(selValue1!="dummy" && selValue2!="dummy" && selValue3!="dummy"){
+        console.log("if console");
+        document.getElementById("picbtn").disabled = false;
+    }else{
+        console.log("else console");
+        document.getElementById("picbtn").disabled = true;
+    }
+    
+}
 
+var btnchange1 = function(){
+    console.log("HI THERE");
+    var e1 = document.getElementById("tshirt-design2");
+    var e2 = document.getElementById("tshirt-design3");
+    var e3 = document.getElementById("tshirt-design4");
+    var selValue1 = e1.options[e1.selectedIndex].value ;
+    var selValue2 = e2.options[e2.selectedIndex].value ;
+    var selValue3 = e3.options[e3.selectedIndex].value ;
+    if(selValue1!="Select one of our designs ..." && selValue2!="Select one of our designs ..." && selValue3!="Select one of our designs ..."){
+        console.log("if console");
+        document.getElementById("picbtn").disabled = false;
+    }else{
+        console.log("else console");
+        document.getElementById("picbtn").disabled = true;
+    }
+    
+}
+var btnchange2 = function(){
+    console.log("HI THERE");
+    var e1 = document.getElementById("TenL1");
+    var e2 = document.getElementById("TenL2");
+    var e3 = document.getElementById("TenL3");
+    var selValue1 = e1.options[e1.selectedIndex].value ;
+    var selValue2 = e2.options[e2.selectedIndex].value ;
+    var selValue3 = e3.options[e3.selectedIndex].value ;
+    if(selValue1!="Select one of our designs ..." && selValue2!="Select one of our designs ..." && selValue3!="Select one of our designs ..."){
+        console.log("if console");
+        document.getElementById("picbtn").disabled = false;
+    }else{
+        console.log("else console");
+        document.getElementById("picbtn").disabled = true;
+    }
+    
+}
+var btnchange3 = function(){
+    console.log("HI THERE");
+    var e1 = document.getElementById("KayalL1").selectedIndex;
+    var e2 = document.getElementById("KayalL2").selectedIndex;
+    var e3 = document.getElementById("KayalL3").selectedIndex;
+    var selValue1 = document.getElementsByTagName("option")[e1].value ;
+    var selValue2 = document.getElementsByTagName("option")[e2].value ;
+    var selValue3 = document.getElementsByTagName("option")[e3].value ;
+    console.log(selValue1+""+selValue2+""+selValue3)
+    if(selValue1!="Select one of our designs ..." && selValue2!="Select one of our designs ..." && selValue3!="Select one of our designs ..."){
+        console.log("if console");
+        document.getElementById("picbtn").disabled = false;
+    }else{
+        console.log("else console");
+        document.getElementById("picbtn").disabled = true;
+    }
+    
+}
 
 
         </script>
