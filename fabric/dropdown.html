@@ -58,12 +58,13 @@
             <button id="SevenInch"  class="btn btn-secondary" name="7inch">7 Inch</button>
             <button id="TenInch"  class="btn btn-secondary" name="10inch" style="margin-left: 20px;">10 Inch</button>
             <button id="kayal"  class="btn btn-secondary" name="kayal" style="margin-left: 20px;">Kayal</button>
-            <!-- <button id="square"  class="btn btn-secondary" name="square" style="margin-left: 20px;">Square</button> -->
+            <button id="square"  class="btn btn-secondary" name="square" style="margin-left: 20px;">Square</button>
         </div>
         <div id="heading-inner" style="font-size: 35px; margin-right: 15%;"></div>
             <div>
             <button href="javascript:;" id="picbtn" onclick="TakeAboutMe(this.id);" class="btn btn-primary" disabled=true>Take a picture</button>
-             </div>  
+            <button href="javascript:;" id="reset" onclick="reset1()" style="margin-left: 10px;margin-right: 15px;"id="reset" class="btn btn-primary">Reset</button>
+        </div>  
             </div>
             
           
@@ -71,7 +72,8 @@
        <div class="body_canvas">
            <canvas id="c" width="1000" height="600"></canvas></div>
         <br>
-        <div class="drop__down">
+       
+        <div class="drop__down" id="div0">
         <div id="div1">
             <label for="tshirt-design2" class="labels__styles">Copper Plate</label>
         <select id="tshirt-design2" class="form-select" onchange="btnchange()">
@@ -181,6 +183,15 @@
             label3.innerHTML = "Center design "
             label3.htmlFor = "TenL3";
             label3.className="labels__styles";
+            document.getElementById("div1").innerHTML='';
+document.getElementById("div2").innerHTML='';
+document.getElementById("div3").innerHTML='';
+if(document.getElementById("div4")){
+    document.getElementById("div4").remove();
+}
+if(document.getElementById("div5")){
+    document.getElementById("div5").remove();
+}
 
             document.getElementById("div1").innerHTML='';
             document.getElementById("div2").innerHTML='';
@@ -624,6 +635,15 @@ label3.className="labels__styles";
 document.getElementById("div1").innerHTML='';
 document.getElementById("div2").innerHTML='';
 document.getElementById("div3").innerHTML='';
+if(document.getElementById("div4")){
+    document.getElementById("div4").remove();
+}
+if(document.getElementById("div5")){
+    document.getElementById("div5").remove();
+}
+document.getElementById("div1").innerHTML='';
+document.getElementById("div2").innerHTML='';
+document.getElementById("div3").innerHTML='';
 document.getElementById("div1").appendChild(label1).appendChild(select1);
 document.getElementById("div2").appendChild(label2).appendChild(select2);
 document.getElementById("div3").appendChild(label3).appendChild(select3);
@@ -917,6 +937,16 @@ document.getElementById('picbtn').disabled=true;
             label3.innerHTML = "Center design "
             label3.htmlFor = "KayalL3";
             label3.className="labels__styles";
+
+            document.getElementById("div1").innerHTML='';
+document.getElementById("div2").innerHTML='';
+document.getElementById("div3").innerHTML='';
+if(document.getElementById("div4")){
+    document.getElementById("div4").remove();
+}
+if(document.getElementById("div5")){
+    document.getElementById("div5").remove();
+}
 
             document.getElementById("div1").innerHTML='';
             document.getElementById("div2").innerHTML='';
@@ -1276,6 +1306,321 @@ if(this.value=="center1")
 
 
 
+document.getElementById('square').onclick = function() {
+    document.getElementById("heading-inner").innerHTML = "SQUARE ARTPLATE";
+    var values1 = ["Select one of our designs ...","Innercopper1"];
+    var values2 = ["Select one of our designs ...","Innersilver1"];
+    var values3 = ["Select one of our designs ...","Outercopper1"];
+    var values4 = ["Select one of our designs ...","Outersilver1"];
+    var values5 = ["Select one of our designs ...","Center1"];
+    window.name_abc="Square";
+    var select1 = document.createElement("select");
+    select1.name = "Two4L1";
+    select1.id = "Two4L1";
+    select1.className="form-select";
+    
+    var select2 = document.createElement("select");
+    select2.name = "Two4L2";
+    select2.id = "Two4L2";
+    select2.className="form-select";
+    
+    var select3 = document.createElement("select");
+    select3.name = "Two4L3";
+    select3.id = "Two4L3";
+    select3.className="form-select";
+
+    var select4 = document.createElement("select");
+    select4.name = "Two4L4";
+    select4.id = "Two4L4";
+    select4.className="form-select";
+
+    var select5 = document.createElement("select");
+    select5.name = "Two4L5";
+    select5.id = "Two4L5";
+    select5.className="form-select";
+    
+    for (const val of values1) {
+        var option = document.createElement("option");
+        option.value = val;
+        option.text = val.charAt(0).toUpperCase() + val.slice(1);
+        select1.appendChild(option);
+        }
+        
+        for (const val of values2) {
+        var option = document.createElement("option");
+        option.value = val;
+        option.text = val.charAt(0).toUpperCase() + val.slice(1);
+        select2.appendChild(option);
+        }
+        
+        for (const val of values3) {
+        var option = document.createElement("option");
+        option.value = val;
+        option.text = val.charAt(0).toUpperCase() + val.slice(1);
+        select3.appendChild(option);
+        }
+        for (const val of values4) {
+            var option = document.createElement("option");
+            option.value = val;
+            option.text = val.charAt(0).toUpperCase() + val.slice(1);
+            select4.appendChild(option);
+            }
+            
+            for (const val of values5) {
+            var option = document.createElement("option");
+            option.value = val;
+            option.text = val.charAt(0).toUpperCase() + val.slice(1);
+            select5.appendChild(option);
+            }
+
+            var label1 = document.createElement("label");
+            label1.innerHTML = "Layer1 "
+            label1.htmlFor = "Two4L1";
+            label1.className="labels__styles";
+            
+            var label2 = document.createElement("label");
+            label2.innerHTML = "Layer2 "
+            label2.htmlFor = "Two4L2";
+            label2.className="labels__styles";
+            
+            var label3 = document.createElement("label");
+            label3.innerHTML = "Layer3 "
+            label3.htmlFor = "Two4L3";
+            label3.className="labels__styles";
+
+            
+            var label4 = document.createElement("label");
+            label4.innerHTML = "Layer4 "
+            label4.htmlFor = "Two4L4";
+            label4.className="labels__styles";
+
+            var label5 = document.createElement("label");
+            label5.innerHTML = "Layer5 "
+            label5.htmlFor = "Two4L5";
+            label5.className="labels__styles";
+
+            var div4=document.createElement("div");
+            div4.id="div4";
+
+            var div5=document.createElement("div");
+            div5.id="div5";
+            
+            
+            document.getElementById("div1").innerHTML='';
+            document.getElementById("div2").innerHTML='';
+            document.getElementById("div3").innerHTML='';
+            if(document.getElementById("div4")){
+                document.getElementById("div4").remove();
+            }
+            if(document.getElementById("div5")){
+                document.getElementById("div5").remove();
+            }
+            if(document.getElementById("div4")){
+                document.getElementById("div4").innerHTML='';
+            }
+            if(document.getElementById("div5")){
+                document.getElementById("div5").innerHTML='';
+            }    
+            document.getElementById("div0").appendChild(div4);
+            document.getElementById("div0").appendChild(div5);
+            document.getElementById("div1").appendChild(label1).appendChild(select1);
+            document.getElementById("div2").appendChild(label2).appendChild(select2);
+            document.getElementById("div3").appendChild(label3).appendChild(select3);
+            document.getElementById("div4").appendChild(label4).appendChild(select4);
+            document.getElementById("div5").appendChild(label5).appendChild(select5);
+            canvas.clear();
+            updateTshirtImage4();
+
+            document.getElementById("Two4L1").addEventListener("change", function(){
+                if(this.value=="Select one of our designs ..."){
+    document.getElementById("picbtn").disabled=true;
+    var imgInstance = new fabric.Image(Square_copperinner, {id:"TWIC1"});
+    imgInstance['selectable'] = false;
+    imgInstance['evented'] = false;
+    imgInstance.scaleToWidth(canvas.getWidth());
+    imgInstance.scaleToHeight(canvas.getHeight());
+    let obj1 = canvas.getObjects().find(obj1 => obj1.id === "TWIC1");
+    canvas.remove(obj1);
+}
+                if(this.value=="Innercopper1")
+            {
+              // canvas.clear();
+            var imgInstance = new fabric.Image(Square_copperinner, {id:"TWIC1"});
+            imgInstance['selectable'] = false;
+           imgInstance['evented'] = false;
+           imgInstance.scaleToWidth(canvas.getWidth());
+            imgInstance.scaleToHeight(canvas.getHeight());
+            canvas.add(imgInstance);
+            group.add(imgInstance);
+    // let obj1 = canvas.getObjects().find(obj1 => obj1.id === "SCO2");
+    // canvas.remove(obj1);
+    // let obj2 = canvas.getObjects().find(obj2 => obj2.id === "SCO3");
+    // canvas.remove(obj2); 
+    // var imgInstance = new fabric.Image(background, {id:"SCO1"});
+    // imgInstance.scaleToWidth(canvas.getWidth());
+    // imgInstance.scaleToHeight(canvas.getHeight());
+    // canvas.add(imgInstance);
+    btnchange4();
+}
+            }
+            , false);
+            document.getElementById("Two4L2").addEventListener("change", function(){
+                if(this.value=="Select one of our designs ..."){
+    document.getElementById("picbtn").disabled=true;
+    var imgInstance = new fabric.Image(Square_silverinner, {id:"TWIS1"});
+    imgInstance['selectable'] = false;
+    imgInstance['evented'] = false;
+    imgInstance.scaleToWidth(canvas.getWidth());
+    imgInstance.scaleToHeight(canvas.getHeight());
+    let obj1 = canvas.getObjects().find(obj1 => obj1.id === "TWIS1");
+    canvas.remove(obj1);
+}
+                if(this.value=="Innersilver1")
+                {
+                  // canvas.clear();
+                var imgInstance = new fabric.Image(Square_silverinner, {id:"TWIS1"});
+                imgInstance['selectable'] = false;
+               imgInstance['evented'] = false;
+               imgInstance.scaleToWidth(canvas.getWidth());
+                imgInstance.scaleToHeight(canvas.getHeight());
+                canvas.add(imgInstance);
+                group.add(imgInstance);
+                btnchange4();
+        // let obj1 = canvas.getObjects().find(obj1 => obj1.id === "SCO2");
+        // canvas.remove(obj1);
+        // let obj2 = canvas.getObjects().find(obj2 => obj2.id === "SCO3");
+        // canvas.remove(obj2); 
+        // var imgInstance = new fabric.Image(background, {id:"SCO1"});
+        // imgInstance.scaleToWidth(canvas.getWidth());
+        // imgInstance.scaleToHeight(canvas.getHeight());
+        // canvas.add(imgInstance);
+                }
+
+
+            }
+            , false);
+            document.getElementById("Two4L3").addEventListener("change", function(){
+                if(this.value=="Select one of our designs ..."){
+    document.getElementById("picbtn").disabled=true;
+    var imgInstance = new fabric.Image(Square_copperouter, {id:"TWOC1"});
+    imgInstance['selectable'] = false;
+    imgInstance['evented'] = false;
+    imgInstance.scaleToWidth(canvas.getWidth());
+    imgInstance.scaleToHeight(canvas.getHeight());
+    let obj1 = canvas.getObjects().find(obj1 => obj1.id === "TWOC1");
+    canvas.remove(obj1);
+}
+ 
+                if(this.value=="Outercopper1")
+                {
+                  // canvas.clear();
+                var imgInstance = new fabric.Image(Square_copperouter, {id:"TWOC1"});
+                imgInstance['selectable'] = false;
+               imgInstance['evented'] = false;
+               imgInstance.scaleToWidth(canvas.getWidth());
+                imgInstance.scaleToHeight(canvas.getHeight());
+                canvas.add(imgInstance);
+                group.add(imgInstance);
+                btnchange4();
+        // let obj1 = canvas.getObjects().find(obj1 => obj1.id === "SCO2");
+        // canvas.remove(obj1);
+        // let obj2 = canvas.getObjects().find(obj2 => obj2.id === "SCO3");
+        // canvas.remove(obj2); 
+        // var imgInstance = new fabric.Image(background, {id:"SCO1"});
+        // imgInstance.scaleToWidth(canvas.getWidth());
+        // imgInstance.scaleToHeight(canvas.getHeight());
+        // canvas.add(imgInstance);
+                }
+                
+            }
+            , false);
+            document.getElementById("Two4L4").addEventListener("change", function(){
+                if(this.value=="Select one of our designs ..."){
+    document.getElementById("picbtn").disabled=true;
+    var imgInstance = new fabric.Image(Square_silverouter, {id:"TWOS1"});
+    imgInstance['selectable'] = false;
+    imgInstance['evented'] = false;
+    imgInstance.scaleToWidth(canvas.getWidth());
+    imgInstance.scaleToHeight(canvas.getHeight());
+    let obj1 = canvas.getObjects().find(obj1 => obj1.id === "TWOS1");
+    canvas.remove(obj1);
+}
+                  
+                if(this.value=="Outersilver1")
+                {
+                  // canvas.clear();
+                var imgInstance = new fabric.Image(Square_silverouter, {id:"TWOS1"});
+                imgInstance['selectable'] = false;
+               imgInstance['evented'] = false;
+               imgInstance.scaleToWidth(canvas.getWidth());
+                imgInstance.scaleToHeight(canvas.getHeight());
+                canvas.add(imgInstance);
+                group.add(imgInstance);
+                btnchange4();
+        // let obj1 = canvas.getObjects().find(obj1 => obj1.id === "SCO2");
+        // canvas.remove(obj1);
+        // let obj2 = canvas.getObjects().find(obj2 => obj2.id === "SCO3");
+        // canvas.remove(obj2); 
+        // var imgInstance = new fabric.Image(background, {id:"SCO1"});
+        // imgInstance.scaleToWidth(canvas.getWidth());
+        // imgInstance.scaleToHeight(canvas.getHeight());
+        // canvas.add(imgInstance);
+                }
+
+            }
+            , false);
+            document.getElementById("Two4L5").addEventListener("change", function(){
+
+                if(this.value=="Select one of our designs ..."){
+    document.getElementById("picbtn").disabled=true;
+    var imgInstance = new fabric.Image(Square_center1, {id:"TWC1"});
+    imgInstance['selectable'] = false;
+    imgInstance['evented'] = false;
+    imgInstance.scaleToWidth(canvas.getWidth());
+    imgInstance.scaleToHeight(canvas.getHeight());
+    let obj1 = canvas.getObjects().find(obj1 => obj1.id === "TWC1");
+    canvas.remove(obj1);
+}
+
+                if(this.value=="Center1")
+                {
+                  // canvas.clear();
+                var imgInstance = new fabric.Image(Square_center1, {id:"TWC1"});
+                imgInstance['selectable'] = false;
+               imgInstance['evented'] = false;
+               imgInstance.scaleToWidth(canvas.getWidth());
+                imgInstance.scaleToHeight(canvas.getHeight());
+                canvas.add(imgInstance);
+                group.add(imgInstance);
+                btnchange4();
+        // let obj1 = canvas.getObjects().find(obj1 => obj1.id === "SCO2");
+        // canvas.remove(obj1);
+        // let obj2 = canvas.getObjects().find(obj2 => obj2.id === "SCO3");
+        // canvas.remove(obj2); 
+        // var imgInstance = new fabric.Image(background, {id:"SCO1"});
+        // imgInstance.scaleToWidth(canvas.getWidth());
+        // imgInstance.scaleToHeight(canvas.getHeight());
+        // canvas.add(imgInstance);
+                }
+
+            }
+            , false);
+
+        }
+            
+    
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1323,9 +1668,11 @@ var Kayal_silver1=new Image();
 var Kayal_center1=new Image();
 
 var Square_background=new Image();
-var Square_copper1=new Image();
-var Square_silver1=new Image();
+var Square_silverouter=new Image();
+var Square_silverinner=new Image();
 var Square_center1=new Image();
+var Square_copperinner=new Image();
+var Square_copperouter=new Image();
 
 function updateTshirtImage1(){
     var imgInstance = new fabric.Image(Seven_background, {});
@@ -1580,6 +1927,14 @@ Kayal_silver1.src ='./kayal/silver.png';
 Kayal_copper1.src ='./kayal/copper.png';
 Kayal_center1.src='./kayal/center.png';
 
+Square_background.src='./Square1/5.png'
+Square_silverouter.src='./Square1/3.png'
+Square_silverinner.src='./Square1/2.png'
+Square_copperouter.src='./Square1/1.png'
+Square_copperinner.src='./Square1/4.png'
+Square_center1.src='./Square1/6.png'
+
+
 
 
 function TakeAboutMe()
@@ -1677,6 +2032,38 @@ var btnchange3 = function(){
         document.getElementById("picbtn").disabled = true;
     }
     
+}
+
+var btnchange4 = function(){
+    console.log("HI THERE");
+    var e1 = document.getElementById("Two4L1").selectedIndex;
+    var e2 = document.getElementById("Two4L2").selectedIndex;
+    var e3 = document.getElementById("Two4L3").selectedIndex;
+    var e4 = document.getElementById("Two4L4").selectedIndex;
+    var e5 = document.getElementById("Two4L5").selectedIndex;
+    var selValue1 = document.getElementsByTagName("option")[e1].value ;
+    var selValue2 = document.getElementsByTagName("option")[e2].value ;
+    var selValue3 = document.getElementsByTagName("option")[e3].value ;
+    var selValue4 = document.getElementsByTagName("option")[e4].value ;
+    var selValue5 = document.getElementsByTagName("option")[e5].value ;
+    console.log(selValue1+""+selValue2+""+selValue3)
+
+    if(selValue1!="Select one of our designs ..." && selValue2!="Select one of our designs ..." && selValue3!="Select one of our designs ..." && selValue4!="Select one of our designs ..." && selValue5!="Select one of our designs ..."){
+        console.log("if console");
+        document.getElementById("picbtn").disabled = false;
+    }else{
+        console.log("else console");
+        document.getElementById("picbtn").disabled = true;
+    }
+    
+}
+
+
+
+
+function reset1() {
+    location.reload();
+
 }
 
 
